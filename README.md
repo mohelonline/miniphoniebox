@@ -18,9 +18,9 @@ Software:
 - I installed simple RaspiOS
 - activated the soundcard
   
-  sudo vi /boot/config.txt:
-- "dtoverlay=hifiberry-dac" eintragen
-- "dtparam=audio=on" auskommentieren
+    sudo vi /boot/config.txt:
+  - "dtoverlay=hifiberry-dac" eintragen
+  - "dtparam=audio=on" auskommentieren
 
 - installed MPD: apt-get install mpd
 - mounted my music directory with cifs using /etc/fstab
