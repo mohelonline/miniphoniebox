@@ -1,5 +1,6 @@
 import subprocess
 from evdev import InputDevice, categorize, ecodes
+#Update your event device here
 dev = InputDevice('/dev/input/event0')
 
 #print(dev)
@@ -15,15 +16,16 @@ for event in dev.read_loop():
         key = ecodes.KEY[event.code]
         if key == 'KEY_ENTER':
             print (stri[:-1])
-            if stri[:-1] == '0001222505':
+            #update the RFID tag IDs here
+            if stri[:-1] == 'XXXXXXXXXX':
                 subprocess.call(["mpc", "volume", "+10"])
-            elif stri[:-1] == '0001222552':
+            elif stri[:-1] == 'XXXXXXXXXX':
                 subprocess.call(["mpc", "volume", "-10"])
-            elif stri[:-1] == '0001454651':
+            elif stri[:-1] == 'XXXXXXXXXX':
                 subprocess.call(["mpc", "toggle"])
-            elif stri[:-1] == '0006305448':
+            elif stri[:-1] == 'XXXXXXXXXX':
                 subprocess.call(["mpc", "prev"])
-            elif stri[:-1] == '0006360197':
+            elif stri[:-1] == 'XXXXXXXXXX':
                 subprocess.call(["mpc", "next"])
             else:
                 subprocess.call(["mpc","clear"])
